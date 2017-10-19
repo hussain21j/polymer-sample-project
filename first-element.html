@@ -1,0 +1,40 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-input/iron-input.html">
+
+<dom-module id="first-element">
+  <div>Hello World</div> 
+  <template>
+    <style>
+      div{
+        border-radius:8px;
+        background-color:#CCC;
+        margin: auto;
+        padding: 10px;
+      }  
+    </style>
+    <div>
+      <p>Hello <b>{{userName}}</b>, Welcome to Google Polymer, {{userName}} is from ready function</p>
+      <content></content>
+      <h1>Registered students</h1>
+      <p>The New Student is <b>{{registeredStudent}}</b></p><br>
+      
+      <input is="iron-input" bind-value={{registeredStudent}} placeholder="New Student">
+    </div>
+  </template>
+</dom-module>
+
+<script>
+    Polymer({
+      is: 'first-element',
+      ready: function(){
+        this.userName = "Jon Doe";
+      },
+      properties:{
+        registeredStudent:{
+          type: String,
+          value: "Janardhan"
+        }
+      }
+    });
+</script>
+  
